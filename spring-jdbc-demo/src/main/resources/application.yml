@@ -1,7 +1,7 @@
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    datasource1: #数据源1
+    datasourceread: #数据源读
       url: jdbc:postgresql://192.168.1.151:5432/tc_dynamic_user_r?autosave=conservative
       username: postgres
       password: 12345678qq
@@ -11,7 +11,7 @@ spring:
         initial-size: 1
         max-active: 20
         min-idle: 5
-    datasource2: #数据源2
+    datasourcewrite: #数据源写
       url: jdbc:postgresql://192.168.1.151:5432/tc_dynamic_user_w?autosave=conservative
       username: postgres
       password: 12345678qq
@@ -24,3 +24,4 @@ spring:
 mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #开启sql日志
+    map-underscore-to-camel-case: true # 开启驼峰字段转化

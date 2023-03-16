@@ -10,20 +10,7 @@
 
 ```
 
-
-```java
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Bean;
-import javax.sql.DataSource;
-/**
- * 根据application.xml配置属性来装配DataSource数据源
- */
-@Bean
-@ConfigurationProperties(prefix = "spring.datasource.datasource1")
-public DataSource dataSouce(){
-    return new DruidDataSource();
-}
-```
 ### 切换数据源的两种方式
 - mybatis 插件的形式（应用场景：读写分离）
+  > mybatis Plugins
 - AOP + 自定义注解 的方式 切换数据源

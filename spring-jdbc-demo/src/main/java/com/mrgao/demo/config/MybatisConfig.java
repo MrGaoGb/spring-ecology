@@ -6,7 +6,9 @@ import org.springframework.context.annotation.Configuration;
 /**
  * @author Mr.Gao
  * @date 2023/3/10 13:45
- * @apiNote:
+ * @apiNote: <p>
+ * 也可通过Mybatis插件来切换数据源
+ * </p>
  */
 @Configuration
 @MapperScan(basePackages = "com.mrgao.demo.mapper")

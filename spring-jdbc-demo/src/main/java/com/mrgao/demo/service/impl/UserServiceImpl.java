@@ -1,5 +1,7 @@
 package com.mrgao.demo.service.impl;
 
+import com.mrgao.demo.annotation.DataSource;
+import com.mrgao.demo.constants.DataSourceContextConstants;
 import com.mrgao.demo.entity.User;
 import com.mrgao.demo.mapper.UserMapper;
 import com.mrgao.demo.service.UserService;
@@ -21,11 +23,21 @@ public class UserServiceImpl implements UserService {
 
     private final UserMapper userMapper;
 
+    /**
+     * 读数据库
+     *
+     * @return
+     */
+    @DataSource
     @Override
     public List<User> listUser() {
         return userMapper.findAll();
     }
 
+    /**
+     * 写数据库
+     */
+    @DataSource(DataSourceContextConstants.DATASOURCE_WRITE)
     @Override
     public void insert() {
         User user = new User();
