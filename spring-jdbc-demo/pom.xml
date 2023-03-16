@@ -59,12 +59,6 @@
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>2.2.2</version>
         </dependency>
-        <!--基于(Mybatis-plus) SpringBoot 的多数据源组件，功能强悍，支持 Seata 分布式事务-->
-       <!-- <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
-            <version>3.5.0</version>
-        </dependency>-->
     </dependencies>
 
     <build>
