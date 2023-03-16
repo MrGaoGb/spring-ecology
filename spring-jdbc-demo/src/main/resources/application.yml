@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    datasource1: #数据源1
+      url: jdbc:postgresql://192.168.1.151:5432/tc_dynamic_user_r?autosave=conservative
+      username: postgres
+      password: 12345678qq
+      driver-class-name: org.postgresql.Driver
+      druid:
+        test-on-borrow: true
+        initial-size: 1
+        max-active: 20
+        min-idle: 5
+    datasource2: #数据源2
+      url: jdbc:postgresql://192.168.1.151:5432/tc_dynamic_user_w?autosave=conservative
+      username: postgres
+      password: 12345678qq
+      driver-class-name: org.postgresql.Driver
+      druid:
+        test-on-borrow: true
+        initial-size: 1
+        max-active: 20
+        min-idle: 5
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #开启sql日志
