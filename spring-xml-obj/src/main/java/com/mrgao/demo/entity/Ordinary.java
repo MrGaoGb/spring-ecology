@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "o")
 public class Ordinary implements Serializable {
 
     @XmlElement
