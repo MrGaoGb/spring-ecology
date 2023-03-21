@@ -8,15 +8,14 @@ import java.util.UUID;
 
 @Data
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(name = "xml")
-@XmlType(name = "s",namespace = "sx",propOrder = {
-        "userName",
-        "age",
-        "aliasUserName",
-        "password",
-        "ordinary"
-})
-@XmlSeeAlso(Ordinary.class)
+//@XmlType(name = "s",namespace = "sx",propOrder = {
+//        "userName",
+//        "age",
+//        "aliasUserName",
+//        "password",
+//        "ordinary"
+//})
+@XmlSeeAlso(AccountUser.class)
 public class User {
 
     @XmlElement(defaultValue = "")

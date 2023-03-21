@@ -2,26 +2,23 @@ package com.mrgao.demo.test;
 
 import com.mrgao.demo.config.XmlConfiguration;
 import com.mrgao.demo.config.XmlObjParseProcess;
+import com.mrgao.demo.entity.AccountUser;
 import com.mrgao.demo.entity.Ordinary;
 import com.mrgao.demo.entity.User;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.Unmarshaller;
-import java.io.StringReader;
-import java.io.StringWriter;
 import java.math.BigDecimal;
+import java.util.UUID;
 
 public class TestXmlBySpring {
     public static void main(String[] args) throws Exception {
 
-        User user = new User();
+        AccountUser user = new AccountUser();
         user.setUserName("高启强");
         user.setAliasUserName("鱼贩子");
         user.setPassword("123456");
         user.setAge(35);
+        user.setAccountUUid(UUID.randomUUID());
         user.setOrdinary(new Ordinary(new BigDecimal("10"), new BigDecimal("0.38")));
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(XmlConfiguration.class);
@@ -51,7 +48,7 @@ public class TestXmlBySpring {
         System.out.println(objToXMl);
         // --TODO 解码器
         System.out.println("---------XML to Object-----------");
-        User xmlToObj = xmlObjParseProcess.xmlToObj(objToXMl, User.class);
+        AccountUser xmlToObj = xmlObjParseProcess.xmlToObj(objToXMl, AccountUser.class);
         System.out.println(xmlToObj);
     }
 }
