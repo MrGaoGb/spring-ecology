@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
-public class XmlConfiguration {
+public class XomConfiguration {
 
     /**
      * 配置XML解析器
@@ -17,8 +17,8 @@ public class XmlConfiguration {
      * @return
      */
     @Bean
-    public XmlObjParseProcess xmlObjParseProcess() {
-        return new XmlObjParseProcess(jaxb2Marshaller().createMarshaller(), jaxb2Marshaller().createUnmarshaller());
+    public XomParseProcess xmlObjParseProcess() {
+        return new XomParseProcess(jaxb2Marshaller().createMarshaller(), jaxb2Marshaller().createUnmarshaller());
     }
 
 

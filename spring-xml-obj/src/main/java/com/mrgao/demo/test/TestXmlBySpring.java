@@ -1,10 +1,9 @@
 package com.mrgao.demo.test;
 
-import com.mrgao.demo.config.XmlConfiguration;
-import com.mrgao.demo.config.XmlObjParseProcess;
+import com.mrgao.demo.config.XomConfiguration;
+import com.mrgao.demo.config.XomParseProcess;
 import com.mrgao.demo.entity.AccountUser;
 import com.mrgao.demo.entity.Ordinary;
-import com.mrgao.demo.entity.User;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.math.BigDecimal;
@@ -21,7 +20,7 @@ public class TestXmlBySpring {
         user.setAccountUUid(UUID.randomUUID());
         user.setOrdinary(new Ordinary(new BigDecimal("10"), new BigDecimal("0.38")));
 
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(XmlConfiguration.class);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(XomConfiguration.class);
 //        Jaxb2Marshaller jaxb2Marshaller = context.getBean("jaxb2Marshaller", Jaxb2Marshaller.class);
 //        // --TODO 获得编码器
 //        Marshaller marshaller = jaxb2Marshaller.createMarshaller();
@@ -41,14 +40,14 @@ public class TestXmlBySpring {
 //        System.out.println(xmlToObj);
 
         // 获取包装类
-        XmlObjParseProcess xmlObjParseProcess = context.getBean(XmlObjParseProcess.class);
+        XomParseProcess xomParseProcess = context.getBean(XomParseProcess.class);
         // --TODO 编码器
         System.out.println("---------Object to XML-----------");
-        String objToXMl = xmlObjParseProcess.objToXml(user);
+        String objToXMl = xomParseProcess.objToXml(user);
         System.out.println(objToXMl);
         // --TODO 解码器
         System.out.println("---------XML to Object-----------");
-        AccountUser xmlToObj = xmlObjParseProcess.xmlToObj(objToXMl, AccountUser.class);
+        AccountUser xmlToObj = xomParseProcess.xmlToObj(objToXMl, AccountUser.class);
         System.out.println(xmlToObj);
     }
 }

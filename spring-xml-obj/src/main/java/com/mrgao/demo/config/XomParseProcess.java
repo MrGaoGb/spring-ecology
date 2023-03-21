@@ -15,7 +15,7 @@ import java.io.StringWriter;
  */
 @AllArgsConstructor
 @NoArgsConstructor
-public class XmlObjParseProcess {
+public class XomParseProcess {
 
     private Marshaller marshaller;
 
