@@ -1,10 +1,8 @@
-package com.mrgao.demo.entity;
+package com.mrgao.demo.entity.jaxb;
 
 import lombok.Data;
 
 import javax.xml.bind.annotation.*;
-import java.util.List;
-import java.util.UUID;
 
 @Data
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -15,7 +13,7 @@ import java.util.UUID;
 //        "password",
 //        "ordinary"
 //})
-@XmlSeeAlso(AccountUser.class)
+@XmlSeeAlso(AccountUser.class) // 可以指定子类 方便XML解析
 public class User {
 
     @XmlElement(defaultValue = "")

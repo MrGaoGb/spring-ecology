@@ -1,4 +1,4 @@
-package com.mrgao.demo.entity;
+package com.mrgao.demo.entity.jaxb;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

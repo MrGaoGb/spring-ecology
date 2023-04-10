@@ -1,7 +1,5 @@
-package com.mrgao.demo.config;
+package com.mrgao.demo.config.parse;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.xml.bind.JAXBElement;
@@ -18,13 +16,17 @@ import java.io.StringWriter;
  * @apiNote:
  */
 @Slf4j
-@AllArgsConstructor
-@NoArgsConstructor
-public class XomParseProcess {
+public class JaxbXomParse implements XomParse{
+
     // 编码器
-    private Marshaller marshaller;
+    private final Marshaller marshaller;
     // 解码器
-    private Unmarshaller unmarshaller;
+    private final Unmarshaller unmarshaller;
+
+    public JaxbXomParse(Marshaller marshaller, Unmarshaller unmarshaller) {
+        this.marshaller = marshaller;
+        this.unmarshaller = unmarshaller;
+    }
 
     /**
      * 对象转化为XML
@@ -33,6 +35,7 @@ public class XomParseProcess {
      * @return
      * @throws Exception
      */
+    @Override
     public String objToXml(Object bizBody) throws Exception {
         try {
             StringWriter stringWriter = new StringWriter();
@@ -53,6 +56,7 @@ public class XomParseProcess {
      * @return
      * @throws Exception
      */
+    @Override
     public <T> T xmlToObj(String xmlBody, Class<T> tClass) throws Exception {
         try {
             StringReader stringWriter = new StringReader(xmlBody);

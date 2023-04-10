@@ -1,7 +1,7 @@
 package com.mrgao.demo.test;
 
-import com.mrgao.demo.entity.Ordinary;
-import com.mrgao.demo.entity.User;
+import com.mrgao.demo.entity.jaxb.Ordinary;
+import com.mrgao.demo.entity.jaxb.User;
 import com.mrgao.demo.utils.XmlObjUtils;
 
 import java.io.IOException;
